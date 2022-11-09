@@ -11,17 +11,15 @@ public class WhileLoopFun {
      Example:  If number is 150856, this methods prints 6, then 5, then 8, then 0, then 5, then 1 (on separate
      lines)
      */
-    public void printDigits(int number) { //Not finished **Complete 
-        int counter = 0;
-        int tempNum = number;
+    public void printDigits(int number) { //Not finished **Complete
         String storage = "";
-        while (counter < (int) (Math.log10(number) + 1)){
-            tempNum %= 10;
-            storage += tempNum + " ";
-            tempNum /= 10;
-            counter++;
-            System.out.println(tempNum);
+        while (number >0){
+            number %= 10;
+            storage += number + " ";
+            number /= 10;
         }
+
+        System.out.println(storage); //Put print inside of loop change sotragew to num
     }
 
     /** Returns the number of times letter occurs in word.
