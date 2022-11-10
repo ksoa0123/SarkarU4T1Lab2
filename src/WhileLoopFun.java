@@ -11,15 +11,11 @@ public class WhileLoopFun {
      Example:  If number is 150856, this methods prints 6, then 5, then 8, then 0, then 5, then 1 (on separate
      lines)
      */
-    public void printDigits(int number) { //Not finished **Complete
-        String storage = "";
-        while (number >0){
-            number %= 10;
-            storage += number + " ";
-            number /= 10;
-        }
-
-        System.out.println(storage); //Put print inside of loop change sotragew to num
+    public void printDigits(int number) {
+        while (number > 0){
+            int digit = number % 10;
+            System.out.println(digit + " ");
+            number = number / 10;
     }
 
     /** Returns the number of times letter occurs in word.
@@ -31,6 +27,15 @@ public class WhileLoopFun {
      try it this time using a while loop!
      */
     public int countLetter(String word, String letter) {
+        int counter = 0;
+        int letterCounter = 0;
+        while (word.length() - 1 > counter){
+            if (Character.toString(word.charAt(counter)).equals(letter)){
+                letterCounter += 1;
+            }
+            counter++;
+        }
+        return letterCounter;
     }
 
     /**Returns the maximum number of times that number can be doubled before it exceeds threshold
