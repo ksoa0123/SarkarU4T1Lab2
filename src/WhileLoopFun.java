@@ -60,6 +60,12 @@ public class WhileLoopFun {
      Precondition: number > 0, threshold > 0
      */
     public int maxDoubles(int number, int threshold) {
+        int counter = 0;
+        while (number < threshold){
+            number *= 2;
+            counter++;
+        }
+        return counter - 1;
     }
 
     /**Returns true if number is prime (i.e. it has exactly two divisors: 1 and itself) and false
@@ -75,5 +81,19 @@ public class WhileLoopFun {
      but 1 has only a single divisor! (don’t believe it? Google it!)
      */
     public boolean isPrime(int number) {
+        boolean checker = false; //False if prime
+
+        int index = 2;  // Factor begins with 2. 1 is already given
+
+        if (number == 1){ //1 is not prime
+            return false;
+        }
+        while (index <= number / 2){ //Divide by 2 as it is factors, so 2 numbers multiplied, going up the numbers list would just lead to the same #. Ex: 1 * 8 == 8 * 1, so we just do first half of facotrs
+            if (number % index == 0){
+                checker = true; //We only need 1 other factor to make it not prime, we overwrite it
+            }
+            index++;
+        }
+        return !checker;
     }
 }
